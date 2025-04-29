@@ -1,0 +1,63 @@
+
+.container {
+    max-width: 48vw;
+    margin: 2rem auto;
+    text-align: center;
+    /* padding-left: 5vh; */
+    justify-content: center;
+    padding : 5vh 25vw;
+}
+
+form{
+    justify-content: center;
+}
+textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.result-image {
+    margin-top: 2rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.error {
+    color: red;
+    margin-top: 1rem;
+}
+.check{
+    margin: 0 10vw;
+}
+.check_container{
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    margin-top: 5vh;
+    width: 150%;
+     /* maxWidth: '600px', */
+     justify-self: center;
+     border-radius: 10px;
+     /* box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.592); */
+     border: 5px black;
+}
+.react-transform-component  {
+    justify-content: center;
+    width: 100%;
+}
+.transform-component-module_wrapper__SPB86 {
+    /* justify-content: center; */
+    width: 100%;
+}
+
