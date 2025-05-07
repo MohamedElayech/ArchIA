@@ -1,57 +1,30 @@
 @startuml
 !include <archimate/Archimate>
-Motivation_Stakeholder(stk1,"Individual Customers")
-Motivation_Stakeholder(stk2,"Business Customers")
+Motivation_Goal(goal1,"Seamless, secure, and tailored digital experiences")
 
-Motivation_Driver(drv1,"Industry Competition")
-Motivation_Driver(drv2,"Customer Expectations")
+Motivation_Requirement(requirement1,"Unified banking app")
+Motivation_Requirement(requirement2,"Robust security measures")
 
-Motivation_Goal(goal1,"Seamless Secure Tailored Experience")
-
-Motivation_Requirement(req1,"Unified Banking App")
-Motivation_Requirement(req2,"Advanced Security")
-
-Motivation_Outcome(out1,"Increased User Engagement")
-Motivation_Outcome(out2,"Higher Digital Loan Applications")
-Motivation_Outcome(out3,"Improved NPS Digital Services")
+Motivation_Outcome(outcome1,"Increased user engagement")
+Motivation_Outcome(outcome2,"Higher rate of loan applications through digital channels")
+Motivation_Outcome(outcome3,"Improved NPS scores for digital services")
 
 
-Rel_Influence(drv1,goal1,Influence)
-Rel_Influence(drv2,goal1,Influence)
-Rel_Influence(goal1,req1,Influence)
-Rel_Influence(goal1,req2,Influence)
-Rel_Influence(req1,out1,Influence)
-Rel_Influence(req1,out2,Influence)
-Rel_Influence(req1,out3,Influence)
-Rel_Influence(stk1,drv2,Influence)
-Business_Service(bsvc1,"Digital Banking")
-Business_Service(bsvc2,"Financial Advisory")
-Business_Service(bsvc3,"Customer Support")
-Business_Service(bsvc4,"Business Banking Tools")
+Rel_Realization(requirement1,goal1,Realization)
+Rel_Realization(requirement2,goal1,Realization)
+Rel_Influence(outcome1,goal1,Influence)
+Rel_Influence(outcome2,goal1,Influence)
+Rel_Influence(outcome3,goal1,Influence)
+Application_Component(appcomponent1,"Unified banking app")
 
-Business_Object(bobj1,"Spending Patterns")
+Application_Function(appfunction1,"Personalized insights")
+Application_Function(appfunction2,"Machine learning-driven product recommendations")
+Application_Function(appfunction3,"Biometric authentication")
+Application_Function(appfunction4,"Fraud detection")
 
 
-Rel_Composition(bsvc1,bsvc2,Composition)
-Rel_Composition(bsvc1,bsvc3,Composition)
-Rel_Composition(bsvc1,bsvc4,Composition)
-Rel_Access(bsvc2,bobj1,Access)
-Application_Component(appc1,"Unified Banking App")
-Application_Component(appc2,"AI Financial Advisor")
-Application_Component(appc3,"Chatbot Support")
-Application_Component(appc4,"Security Module")
-
-Application_Function(appf1,"Analyze Spending Patterns")
-
-Application_Service(appsrv1,"Personalized Insights Service")
-
-Application_DataObject(dobj1,"Customer Data")
-
-
-Rel_Composition(appc1,appc2,Composition)
-Rel_Composition(appc1,appc3,Composition)
-Rel_Composition(appc1,appc4,Composition)
-Rel_Composition(appc2,appf1,Composition)
-Rel_Access(appf1,dobj1,Access)
-Rel_Realization(appf1,appsrv1,Realization)
+Rel_Assignment(appfunction1,appcomponent1,Assignment)
+Rel_Assignment(appfunction2,appcomponent1,Assignment)
+Rel_Assignment(appfunction3,appcomponent1,Assignment)
+Rel_Assignment(appfunction4,appcomponent1,Assignment)
 @enduml
