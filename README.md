@@ -1,6 +1,6 @@
 # ArchIA : Design and Developement Project
 
-This project is a toolset for modeling, processing, and visualizing architectural concepts from natural language inputs. It converts user-provided architecture-related descriptions into structured models and generates Draw.io diagrams automatically.
+This project is a toolset for modeling, processing, and visualizing architectural concepts from natural language inputs. It converts user-provided architecture-related descriptions into structured models and generates Draw.io and Archimate diagrams automatically.
 
 The system uses:
 
@@ -13,7 +13,7 @@ The system uses:
 
 ## Purpose
 
-The project allows users to input architectural ideas in plain text, and get back structured diagrams showing Stakeholders, Goals, Principles, Constraints, and more, automatically laid out in Draw.io.
+The project allows users to input architectural ideas in plain text, and get back structured diagrams showing Stakeholders, Goals, Principles, Constraints, and more, automatically laid out in Draw.io or archimate.
 
 ---
 
@@ -79,6 +79,41 @@ pip install openai
 pip install networkx graphviz
 ```
 
+### Install Graphviz (Required)
+Graphviz is needed to generate the Draw.io-compatible diagrams.
+
+▶️ Windows
+Download the installer from:
+--> https://graphviz.org/download/
+
+Install it using the default settings.
+Make sure "Add Graphviz to the system PATH" is checked.
+
+After installation, open Command Prompt and run:
+
+dot -V
+You should see something like:
+dot - graphviz version 2.49.0
+
+If not recognized, add this path to your system's environment variables:
+C:\Program Files\Graphviz\bin
+
+Then restart your terminal.
+
+▶️ macOS
+
+brew install graphviz
+
+▶️ Linux (Ubuntu/Debian)
+
+sudo apt update  
+sudo apt install graphviz
+
+Verify installation:
+
+dot -V
+
+
 #### Run flask code
 
 ```bash
@@ -108,7 +143,7 @@ cd interface
 #### install npm
 
 ```bash
-npm intall
+npm install
 ```
 
 #### Running the front-end code
