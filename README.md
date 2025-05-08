@@ -1,12 +1,17 @@
-# React + Vite
+# PCD Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a toolset for modeling, processing, and visualizing architectural concepts from natural language inputs. It converts user-provided architecture-related descriptions into structured models and generates Draw.io diagrams automatically.
 
-Currently, two official plugins are available:
+The system uses:
+- **Flask** to expose an API  
+- **OpenAI** for semantic understanding  
+- **NetworkX** for internal graph modeling  
+- **Graphviz** to generate Draw.io-compatible visuals
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Purpose
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The project allows users to input architectural ideas in plain text, and get back structured diagrams showing Stakeholders, Goals, Principles, Constraints, and more, automatically laid out in Draw.io.
+
+---
