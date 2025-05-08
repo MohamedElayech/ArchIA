@@ -84,15 +84,6 @@ pip install networkx graphviz
 ```bash
 python app.py
 ```
-
-### Running the user interface
-
-#### Navigate to the `flask` directory:
-
-```bash
-cd interface
-```
-
 #### Navigate to the `drawio` directory:
 
 ```bash
@@ -104,6 +95,15 @@ cd drawio
 ```bash
 python app.py
 ```
+
+### Running the user interface
+
+#### Navigate to the `interface` directory:
+
+```bash
+cd interface
+```
+
 
 #### install npm
 
