@@ -10,6 +10,9 @@ function Content() {
   const [imageSrc, setImageSrc] = useState(null);
   const [loading, setLoading] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
+  const [url, setUrl] = useState("");
+  const [gbtJson,setGbtJson]= useState("");
+
   var elms = [] ;
 
 
@@ -43,6 +46,30 @@ function Content() {
       } else {
         console.error('Image generation failed:', resJson.error);
       } 
+
+      
+      const gbtResponse = await fetch("http://127.0.0.1:5000/run_gbt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          input: paragraph,
+          layers: elements,
+          layout: "dot"
+        })
+      });
+      
+      const data1 = await gbtResponse.json();  // data1 = { result: "some-url" }
+      setGbtJson(data1.result);  // set the URL only
+      
+      if (data1.result) {
+        console.log("Received from Python run_gbt:", data1.result);
+      } else {
+        console.log("url empty");
+      }
+
+
+
+
     }catch (err) {
       console.error("Error during fetch:", err);
     } finally {
@@ -98,22 +125,34 @@ function Content() {
       </form>
       {loading && <p>This may take a while, please wait...</p>}
       
-      <Zoom>
-        <img
-          src={imageSrc}
-          alt="Generated"
-          style={{
-            display: imageSrc ? "block" : "none",
-            // width: "500px",   // fixed width
-            height: "auto",   // preserve aspect ratio
-            objectFit: "contain"
-          }}
-          onError={(e) => {
-            e.target.style.display = "none";
-            console.error("Failed to load image:", imageSrc);
-          }}
-        />
-      </Zoom>
+      {imageSrc && (
+        <div className="image-container">
+          <Zoom>
+            <img
+              src={imageSrc}
+              alt="Generated"
+              style={{
+                display: imageSrc ? "block" : "none",
+                height: "auto",
+                objectFit: "contain"
+              }}
+              onError={(e) => {
+                e.target.style.display = "none";
+                console.error("Failed to load image:", imageSrc);
+              }}
+            />
+          </Zoom>
+          {gbtJson &&
+            <a 
+              href= {gbtJson}           
+              className="download-button"
+              target="_blank"
+            >
+              View Drow.io version
+            </a>
+          }
+        </div>
+      )}
           
       {/* {error && <p className="error">{error}</p>}
       {imageUrl && <img src={imageUrl} alt="Generated" className="result-image" />} */}
