@@ -91,7 +91,8 @@ function Content() {
 
   return (
     <div className="container">
-      <h1>Paragraph to Image</h1>
+      <h1>Archimate Diagram Generator</h1>
+      <h4>Enter your project description, chose layers and press generate</h4>
       <form onSubmit={handleSubmit}>
         <textarea
           rows={6}
